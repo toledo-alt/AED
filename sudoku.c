@@ -59,9 +59,9 @@ int main(void) {
 
         printf("Instancia %d\n", caso);
         if (valida_linhas(grade) == 0 && valida_colunas(grade) == 0 && valida_blocos(grade) == 0) {
-            printf("SIM\n");
+            printf("sim\n");
         } else {
-            printf("NAO\n");
+            printf("nao\n");
         }
         printf("\n");
     }
