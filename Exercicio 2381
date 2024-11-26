@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_STUDENTS 100
+#define MAX_NAME_LENGTH 21
+
+int main() {
+    int N, K;
+    char names[MAX_STUDENTS][MAX_NAME_LENGTH];
+    char temp[MAX_NAME_LENGTH];
+
+    
+    scanf("%d %d", &N, &K);
+
+    
+    for (int i = 0; i < N; i++) {
+        scanf("%s", names[i]);
+    }
+
+    
+    for (int i = 0; i < N - 1; i++) {
+        for (int j = 0; j < N - i - 1; j++) {
+            if (strcmp(names[j], names[j + 1]) > 0) {
+                strcpy(temp, names[j]);
+                strcpy(names[j], names[j + 1]);
+                strcpy(names[j + 1], temp);
+            }
+        }
+    }
+
+  
+    printf("%s\n", names[K - 1]);
+
+    return 0;
+}
